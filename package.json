@@ -9,7 +9,6 @@
   "scripts": {
     "commit": "git-cz",
     "prepare": "husky install",
-    "test": "jest",
     "format": "prettier --write *.js",
     "semantic-release": "semantic-release"
   },
@@ -31,10 +30,8 @@
     "@commitizen/cz-conventional-changelog": "^1.2.0",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-angular": "^12.1.4",
-    "@commitlint/lint": "^12.1.4",
     "commitizen": "^4.2.4",
     "husky": "^6.0.0",
-    "jest": "^27.0.4",
     "prettier": "^2.3.1",
     "semantic-release": "^17.4.3"
   },
