@@ -1,6 +1,6 @@
 # @dgc-org/commitlint-config-conventional-changelog-for-jira
 
-Shareable `commitlint` config enforcing the [Angular commit convention](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) and [Jira Smart Commit Syntax](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/).
+Shareable `commitlint` config enforcing the [Angular commit convention](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) and [Jira Smart Commit Syntax](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/). Based on [@commitlint/config-angular](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-angular#commitlintconfig-angular)
 Use with [@commitlint/cli](../cli) and [@commitlint/prompt-cli](../prompt-cli).
 
 ## Getting started
@@ -25,16 +25,17 @@ Consult [docs/rules](https://conventional-changelog.github.io/commitlint/#/refer
 
   ```
   [
-    'build',
-    'ci',
-    'docs',
-    'feat',
-    'fix',
-    'perf',
-    'refactor',
-    'revert',
-    'style',
-    'test'
+    "feat",
+    "fix",
+    "docs",
+    "refactor",
+    "test",
+    "style",
+    "build",
+    "ci",
+    "chore",
+    "perf",
+    "revert",
   ]
   ```
 
@@ -119,17 +120,6 @@ echo "fix: some message" # passes
 echo "fix: some message." # fails
 echo "fix: some message" # passes
 ```
-
-#### subject-exclamation-mark
-
-- **condition**: `subject` must not have a `!` before the `:` marker
-- **rule**: `never`
-
-The [angular commit
-convention](hhttps://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit)
-dose not use a `!` to define a breaking change in the commit subject. If you
-want to use this feature please consider using the [conventional commit
-config](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#commitlintconfig-conventional).
 
 #### header-max-length
 
