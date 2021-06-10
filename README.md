@@ -1,5 +1,7 @@
 # @dgc-org/commitlint-config-conventional-changelog-for-jira
 
+sdfsdf
+
 Shareable `commitlint` config enforcing the [Angular commit convention](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) and [Jira Smart Commit Syntax](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/). Based on [@commitlint/config-angular](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-angular#commitlintconfig-angular)
 Use with [@commitlint/cli](../cli) and [@commitlint/prompt-cli](../prompt-cli).
 
