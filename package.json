@@ -4,7 +4,8 @@
   "description": "Shareable commitlint config enforcing the angular commit convention and Jira smart commits",
   "files": [
     "index.js",
-    "types.js"
+    "commit-types.js",
+    "parser-preset.js"
   ],
   "scripts": {
     "commit": "git-cz",
@@ -26,14 +27,20 @@
   ],
   "author": "Mario Nebl <hello@herebecode.com>",
   "license": "MIT",
+  "dependencies": {
+    "@commitlint/config-angular": "^12.1.4",
+    "@dgc-org/cz-conventional-changelog-for-jira": "^1.1.0"
+  },
   "devDependencies": {
     "@commitizen/cz-conventional-changelog": "^1.2.0",
     "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-angular": "^12.1.4",
     "commitizen": "^4.2.4",
     "husky": "^6.0.0",
     "prettier": "^2.3.1",
     "semantic-release": "^17.4.3"
+  },
+  "peerDependencies": {
+    "@commitlint/lint": "^12.1.4"
   },
   "config": {
     "commitizen": {
@@ -42,7 +49,7 @@
   },
   "commitlint": {
     "extends": [
-      "@commitlint/config-angular"
+      "."
     ]
   },
   "release": {
@@ -53,8 +60,5 @@
   "publishConfig": {
     "access": "public",
     "scope": "@dgc-org"
-  },
-  "dependencies": {
-    "@dgc-org/cz-conventional-changelog-for-jira": "^1.1.0"
   }
 }
