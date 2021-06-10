@@ -1,4 +1,4 @@
-const typeInfo = require('@dgc-org/cz-conventional-changelog-for-jira/types');
+const typeInfo = require('@dgc-org/cz-conventional-changelog-for-jira/commit-types');
 const types = Object.keys(typeInfo);
 
 module.exports.rules = {

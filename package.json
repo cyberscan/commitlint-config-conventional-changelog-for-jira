@@ -28,11 +28,9 @@
   "author": "Mario Nebl <hello@herebecode.com>",
   "license": "MIT",
   "dependencies": {
-    "@commitlint/config-angular": "^12.1.4",
-    "@dgc-org/cz-conventional-changelog-for-jira": "^1.1.0"
+    "@commitlint/config-angular": "^12.1.4"
   },
   "devDependencies": {
-    "@commitizen/cz-conventional-changelog": "^1.2.0",
     "@commitlint/cli": "^12.1.4",
     "commitizen": "^4.2.4",
     "husky": "^6.0.0",
@@ -44,7 +42,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/@dgc-org/cz-conventional-changelog-for-jira"
     }
   },
   "commitlint": {
