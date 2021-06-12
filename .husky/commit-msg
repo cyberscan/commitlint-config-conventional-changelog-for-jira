@@ -1,4 +1,9 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+#!/usr/bin/env bash
 
-npx commitlint --edit "$1"
+source "$(dirname "$0")/_/husky.sh"
+
+if [ "$COMMITIZEN_DISABLE" = "1" ] || [ "${COMMITIZEN_DISABLE,,}" = "true" ]; then
+  exit 0
+else
+  npx commitlint --edit "$1"
+fi

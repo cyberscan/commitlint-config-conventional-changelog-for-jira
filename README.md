@@ -11,6 +11,16 @@ npm install --save-dev @dgc-org/commitlint-config-conventional-changelog-for-jir
 echo "module.exports = {extends: ['@dgc-org/commitlint-config-conventional-changelog-for-jira']};" > commitlint.config.js
 ```
 
+## Disabling commitlint
+
+In some cases it might be useful to be able to skip linting, e.g. when lacking access to Jira or having to do nasty things in GitOps. This configuration skips the linting process altogether if either of these conditions are satisfied:
+
+- Commit message starts with `WIP:`, e.g. `WIP: the office is burning down, need to save my work`
+- Environment variable `COMMITLINT_DISABLE` is set to `true` (case-insensitive) or `1`
+- Environment variable `COMMITIZEN_DISABLE` is set to `true` (case-insensitive) or `1`
+
+This mechanism should only be used in situations where there's no alternative to it, rather than to ignore fixable validation failures.
+
 ## Rules
 
 ### Problems
