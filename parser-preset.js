@@ -1,5 +1,3 @@
-const allowedEmotes = require("./commit-types").emoteList;
-
 module.exports = {
   parserOpts: {
     // <type>(<scope>): <[ticket-id]> <subject>

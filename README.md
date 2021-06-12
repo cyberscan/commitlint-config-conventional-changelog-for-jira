@@ -1,13 +1,12 @@
 # @dgc-org/commitlint-config-conventional-changelog-for-jira
 
-sdfsdf
+Shareable `commitlint` config enforcing the [Angular commit convention](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) and [Jira Smart Commit Syntax](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/). Based on [@commitlint/config-angular](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-angular#commitlintconfig-angular).
 
-Shareable `commitlint` config enforcing the [Angular commit convention](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) and [Jira Smart Commit Syntax](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/). Based on [@commitlint/config-angular](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-angular#commitlintconfig-angular)
-Use with [@commitlint/cli](../cli) and [@commitlint/prompt-cli](../prompt-cli).
+Use with [@dgc-org/cz-conventional-changelog-for-jira](https://www.npmjs.com/package/@dgc-org/cz-conventional-changelog-for-jira), [@commitlint/cli](https://www.npmjs.com/package/@commitlint/cli).
 
 ## Getting started
 
-```sh
+```shell_session
 npm install --save-dev @dgc-org/commitlint-config-conventional-changelog-for-jira @commitlint/cli
 echo "module.exports = {extends: ['@dgc-org/commitlint-config-conventional-changelog-for-jira']};" > commitlint.config.js
 ```
@@ -25,23 +24,23 @@ Consult [docs/rules](https://conventional-changelog.github.io/commitlint/#/refer
 - **rule**: `always`
 - **value**
 
-  ```
-  [
-    "feat",
-    "fix",
-    "docs",
-    "refactor",
-    "test",
-    "style",
-    "build",
-    "ci",
-    "chore",
-    "perf",
-    "revert",
-  ]
-  ```
+```shell_session
+[
+  "feat",
+  "fix",
+  "docs",
+  "refactor",
+  "test",
+  "style",
+  "build",
+  "ci",
+  "chore",
+  "revert",
+  "perf",
+]
+```
 
-```sh
+```shell_session
 echo "foo: some message" # fails
 echo "fix: some message" # passes
 ```
@@ -51,11 +50,12 @@ echo "fix: some message" # passes
 - **description**: `type` is in case `value`
 - **rule**: `always`
 - **value**
-  ```
-  'lowerCase'
-  ```
 
-```sh
+```shell_session
+'lowerCase'
+```
+
+```shell_session
 echo "FIX: some message" # fails
 echo "fix: some message" # passes
 ```
@@ -65,7 +65,7 @@ echo "fix: some message" # passes
 - **condition**: `type` is empty
 - **rule**: `never`
 
-```sh
+```shell_session
 echo ": some message" # fails
 echo "fix: some message" # passes
 ```
@@ -75,11 +75,11 @@ echo "fix: some message" # passes
 - **condition**: `scope` is in case `value`
 - **rule**: `always`
 
-```
+```shell_session
 'lowerCase'
 ```
 
-```sh
+```shell_session
 echo "fix(SCOPE): some message" # fails
 echo "fix(scope): some message" # passes
 ```
@@ -89,7 +89,7 @@ echo "fix(scope): some message" # passes
 - **condition**: `subject` is in one of the cases `['sentence-case', 'start-case', 'pascal-case', 'upper-case']`
 - **rule**: `never`
 
-```sh
+```shell_session
 echo "fix(SCOPE): Some message" # fails
 echo "fix(SCOPE): Some Message" # fails
 echo "fix(SCOPE): SomeMessage" # fails
@@ -103,7 +103,7 @@ echo "fix(scope): some Message" # passes
 - **condition**: `subject` is empty
 - **rule**: `never`
 
-```sh
+```shell_session
 echo "fix:" # fails
 echo "fix: some message" # passes
 ```
@@ -114,11 +114,11 @@ echo "fix: some message" # passes
 - **rule**: `never`
 - **value**
 
-```
+```shell_session
 '.'
 ```
 
-```sh
+```shell_session
 echo "fix: some message." # fails
 echo "fix: some message" # passes
 ```
@@ -129,11 +129,11 @@ echo "fix: some message" # passes
 - **rule**: `always`
 - **value**
 
-```
+```shell_session
 72
 ```
 
-```sh
+```shell_session
 echo "fix: some message that is way too long and breaks the line max-length by several characters" # fails
 echo "fix: some message" # passes
 ```

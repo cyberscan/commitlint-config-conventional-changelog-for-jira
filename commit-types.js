@@ -3,9 +3,9 @@ const typeList = Object.keys(types);
 
 module.exports = {
   value: () => typeList,
+  types: types,
   rules: {
     'type-enum': [2, 'always', typeList],
   },
-  types: types,
   typeList: typeList,
 };

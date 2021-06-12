@@ -1,4 +1,4 @@
-const typeEnum = require('./commit-types');
+const types = require('./commit-types');
 
 module.exports = {
   // Pre-defined sets of rules to extend
@@ -8,12 +8,10 @@ module.exports = {
   parserPreset: './parser-preset',
   // Rules defined here override or extend those from rulesets specified in extends: above
   rules: {
-    // Custom list of valid commit types
-    'type-enum': typeEnum.rules['type-enum'],
-    // Require references to tickets
+    // Custom list of valid commit types (overrides @commitlint/config-angular)
+    'type-enum': types.rules['type-enum'],
+    // Require references to tickets (overrides @commitlint/rules)
     'references-empty': [2, 'never'],
-    // Scopes should be upper case
-    'scope-case': [2, 'always', 'upper-case'],
   },
   // Inline plugin for additional rules
   // ref: https://github.com/conventional-changelog/commitlint/blob/master/docs/reference-plugins.md#local-plugins
