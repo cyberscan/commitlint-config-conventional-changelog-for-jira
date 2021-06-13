@@ -1,63 +1,68 @@
 {
-  "name": "@dgc-org/commitlint-config-conventional-changelog-for-jira",
-  "version": "0.0.0-semantically-released",
-  "description": "Shareable commitlint config enforcing the angular commit convention and Jira smart commits",
-  "files": [
-    "index.js",
-    "commit-types.js",
-    "parser-preset.js"
-  ],
-  "scripts": {
-    "commit": "git-cz",
-    "prepare": "husky install",
-    "format": "prettier --write *.js",
-    "semantic-release": "semantic-release"
-  },
-  "homepage": "https://github.com/cyberscan/commitlint-config-conventional-changelog-for-jira#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cyberscan/commitlint-config-conventional-changelog-for-jira.git"
-  },
-  "keywords": [
-    "conventional-changelog",
-    "commitlint",
-    "commitlint-config",
-    "angular",
-    "jira"
-  ],
-  "author": "Mario Nebl <hello@herebecode.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@commitlint/config-angular": "^12.1.4",
-    "@dgc-org/cz-conventional-changelog-for-jira": "^1.3.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "commitizen": "^4.2.4",
-    "husky": "^6.0.0",
-    "prettier": "^2.3.1",
-    "semantic-release": "^17.4.3"
-  },
-  "peerDependencies": {
-    "@commitlint/lint": "^12.1.4"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/@dgc-org/cz-conventional-changelog-for-jira"
+    "name": "@dgc-org/commitlint-config-conventional-changelog-for-jira",
+    "version": "0.0.0-semantically-released",
+    "description": "Shareable commitlint config enforcing the angular commit convention and Jira smart commits",
+    "files": [
+        "index.js"
+    ],
+    "scripts": {
+        "commit": "git-cz",
+        "postinstall": "husky install",
+        "format": "prettier --write *.{js,json}",
+        "semantic-release": "semantic-release"
+    },
+    "homepage": "https://github.com/cyberscan/commitlint-config-conventional-changelog-for-jira#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cyberscan/commitlint-config-conventional-changelog-for-jira.git"
+    },
+    "keywords": [
+        "conventional-changelog",
+        "commitlint",
+        "commitlint-config",
+        "angular",
+        "jira"
+    ],
+    "author": "Mario Nebl <hello@herebecode.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@commitlint/config-angular": "^12.1.4",
+        "@dgc-org/cz-conventional-changelog-for-jira": "^1.3.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^12.1.4",
+        "commitizen": "^4.2.4",
+        "husky": "^6.0.0",
+        "prettier": "^2.3.1",
+        "semantic-release": "^17.4.3"
+    },
+    "peerDependencies": {
+        "@commitlint/lint": "^12.1.4"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/@dgc-org/cz-conventional-changelog-for-jira"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "."
+        ]
+    },
+    "release": {
+        "branches": [
+            "master"
+        ]
+    },
+    "publishConfig": {
+        "access": "public",
+        "scope": "@dgc-org"
+    },
+    "prettier": {
+        "printWidth": 80,
+        "endOfLine": "lf",
+        "singleQuote": false,
+        "tabWidth": 4,
+        "semi": true
     }
-  },
-  "commitlint": {
-    "extends": [
-      "."
-    ]
-  },
-  "release": {
-    "branches": [
-      "master"
-    ]
-  },
-  "publishConfig": {
-    "access": "public",
-    "scope": "@dgc-org"
-  }
 }
