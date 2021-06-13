@@ -173,10 +173,11 @@
     chalk "^4.0.0"
 
 "@dgc-org/cz-conventional-changelog-for-jira@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@dgc-org/cz-conventional-changelog-for-jira/-/cz-conventional-changelog-for-jira-1.3.0.tgz#e319cd0a581bd1a88e5472015d15fa6c42454ef7"
-  integrity sha512-CtG7hXqQiaQsTOEROCS1qJIOBwKJBIsR5RjwbZWJe7jcTQcpw3U12JA0ElpbTAGc55BcnAVHkxXaCyDWoToQSQ==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@dgc-org/cz-conventional-changelog-for-jira/-/cz-conventional-changelog-for-jira-1.4.1.tgz#acd4e441c0da4003ecebf2bbddacdf2b8f7f7537"
+  integrity sha512-tygPv642XlA+mouoxUrvAF1hAUZTnIofPoJsPY+MjhWBqc3rITBKO1ZsdKjLPuHZS8ZD7nyaCtCJF7s6C6RR9A==
   dependencies:
+    "@commitlint/config-angular-type-enum" "^12.1.4"
     boxen "^5.0.0"
     chalk "^2.4.1"
     commitizen "^4.2.4"
@@ -188,8 +189,6 @@
     longest "^2.0.1"
     right-pad "^1.0.1"
     word-wrap "^1.0.3"
-  optionalDependencies:
-    "@commitlint/load" ">6.1.1"
 
 "@types/minimist@^1.2.0":
   version "1.2.1"
@@ -1554,7 +1553,7 @@ lodash.map@^4.5.1:
   resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
   integrity sha1-dx7Hg540c9nEzeKLGTlMNWL09tM=
 
-lodash@^4.17.12, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20:
+lodash@^4.17.12, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==

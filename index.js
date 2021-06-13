@@ -1,8 +1,62 @@
-const types = require("@dgc-org/cz-conventional-changelog-for-jira/commit-types");
+const merge = require("lodash/merge");
 
-module.exports = {
-    // Pre-defined sets of rules to extend
-    extends: ["@commitlint/config-angular"],
+const base = require("@commitlint/config-angular");
+
+const types = {
+    feat: {
+        description: "A new feature",
+        title: "Features",
+    },
+    fix: {
+        description: "A bug fix",
+        title: "Bug Fixes",
+    },
+    docs: {
+        description: "Documentation only changes",
+        title: "Documentation",
+    },
+    refactor: {
+        description:
+            "A code change that neither fixes a bug nor adds a feature",
+        title: "Code Refactoring",
+    },
+    test: {
+        description: "Adding missing tests or correcting existing tests",
+        title: "Tests",
+    },
+    style: {
+        description:
+            "Formatting changes that do not affect the meaning of the code",
+        title: "Style Conventions",
+    },
+    build: {
+        description:
+            "Changes that affect the build system or external dependencies",
+        title: "Builds",
+    },
+    ci: {
+        description: "Changes to our CI configuration files and scripts",
+        title: "Continuous Integrations",
+    },
+    chore: {
+        description: "Other changes that don't modify src or test files",
+        title: "Chores",
+    },
+    revert: {
+        description: "Reverts a previous commit",
+        title: "Reverts",
+    },
+    perf: {
+        description: "A code change that improves performance",
+        title: "Performance Improvements",
+    },
+    wip: {
+        description: "Work in progress (skip commitlint)",
+        title: "Work in Progress",
+    },
+};
+
+module.exports = merge(base, {
     // parserPreset is responsible for splitting commit messages into lexemes
     // ref: https://github.com/conventional-changelog/commitlint/blob/master/docs/reference-configuration.md#parser-presets
     parserPreset: {
@@ -21,18 +75,13 @@ module.exports = {
     },
     // Functions that return true if commitlint should ignore the given message.
     ignores: [
-        // Skip linting if commit message starts with "WIP:"
-        (msg) => msg.startsWith("WIP:"),
+        // Skip linting if commit message starts with "wip: "
+        (msg) => msg.startsWith("wip: "),
         // Skip linting if env var COMMITLINT_DISABLE is set
         () =>
             process.env.COMMITLINT_DISABLE !== undefined &&
             (process.env.COMMITLINT_DISABLE.toLowerCase() === "true" ||
                 process.env.COMMITLINT_DISABLE === "1"),
-        // Skip linting if env var COMMITIZEN_DISABLE is set
-        () =>
-            process.env.COMMITIZEN_DISABLE !== undefined &&
-            (process.env.COMMITIZEN_DISABLE.toLowerCase() === "true" ||
-                process.env.COMMITIZEN_DISABLE === "1"),
     ],
     // Help URL to display in error output
     helpUrl:
@@ -44,4 +93,4 @@ module.exports = {
             rules: {},
         },
     ],
-};
+});

@@ -15,9 +15,8 @@ echo "module.exports = {extends: ['@dgc-org/commitlint-config-conventional-chang
 
 In some cases it might be useful to be able to skip linting, e.g. when lacking access to Jira or having to do nasty things in GitOps. This configuration skips the linting process altogether if either of these conditions are satisfied:
 
-- Commit message starts with `WIP:`, e.g. `WIP: the office is burning down, need to save my work`
-- Environment variable `COMMITLINT_DISABLE` is set to `true` (case-insensitive) or `1`
-- Environment variable `COMMITIZEN_DISABLE` is set to `true` (case-insensitive) or `1`
+-   Commit message starts with `WIP:`, e.g. `WIP: the office is burning down, need to save my work`
+-   Environment variable `COMMITLINT_DISABLE` is set to `true` (case-insensitive) or `1`
 
 This mechanism should only be used in situations where there's no alternative to it, rather than to ignore fixable validation failures.
 
@@ -30,9 +29,9 @@ Consult [docs/rules](https://conventional-changelog.github.io/commitlint/#/refer
 
 #### type-enum
 
-- **condition**: `type` is found in value
-- **rule**: `always`
-- **value**
+-   **condition**: `type` is found in value
+-   **rule**: `always`
+-   **value**
 
 ```shell_session
 [
@@ -47,6 +46,7 @@ Consult [docs/rules](https://conventional-changelog.github.io/commitlint/#/refer
   "chore",
   "revert",
   "perf",
+  "wip",
 ]
 ```
 
@@ -57,9 +57,9 @@ echo "fix: some message" # passes
 
 #### type-case
 
-- **description**: `type` is in case `value`
-- **rule**: `always`
-- **value**
+-   **description**: `type` is in case `value`
+-   **rule**: `always`
+-   **value**
 
 ```shell_session
 'lowerCase'
@@ -72,8 +72,8 @@ echo "fix: some message" # passes
 
 #### type-empty
 
-- **condition**: `type` is empty
-- **rule**: `never`
+-   **condition**: `type` is empty
+-   **rule**: `never`
 
 ```shell_session
 echo ": some message" # fails
@@ -82,8 +82,8 @@ echo "fix: some message" # passes
 
 #### scope-case
 
-- **condition**: `scope` is in case `value`
-- **rule**: `always`
+-   **condition**: `scope` is in case `value`
+-   **rule**: `always`
 
 ```shell_session
 'lowerCase'
@@ -96,8 +96,8 @@ echo "fix(scope): some message" # passes
 
 #### subject-case
 
-- **condition**: `subject` is in one of the cases `['sentence-case', 'start-case', 'pascal-case', 'upper-case']`
-- **rule**: `never`
+-   **condition**: `subject` is in one of the cases `['sentence-case', 'start-case', 'pascal-case', 'upper-case']`
+-   **rule**: `never`
 
 ```shell_session
 echo "fix(SCOPE): Some message" # fails
@@ -110,8 +110,8 @@ echo "fix(scope): some Message" # passes
 
 #### subject-empty
 
-- **condition**: `subject` is empty
-- **rule**: `never`
+-   **condition**: `subject` is empty
+-   **rule**: `never`
 
 ```shell_session
 echo "fix:" # fails
@@ -120,9 +120,9 @@ echo "fix: some message" # passes
 
 #### subject-full-stop
 
-- **condition**: `subject` ends with `value`
-- **rule**: `never`
-- **value**
+-   **condition**: `subject` ends with `value`
+-   **rule**: `never`
+-   **value**
 
 ```shell_session
 '.'
@@ -135,9 +135,9 @@ echo "fix: some message" # passes
 
 #### header-max-length
 
-- **condition**: `header` has `value` or less characters
-- **rule**: `always`
-- **value**
+-   **condition**: `header` has `value` or less characters
+-   **rule**: `always`
+-   **value**
 
 ```shell_session
 72
@@ -154,5 +154,5 @@ The following rules are considered warnings for `@dgc-org/commitlint-config-conv
 
 #### body-leading-blank
 
-- **condition**: Body begins with blank line
-- **rule**: `always`
+-   **condition**: Body begins with blank line
+-   **rule**: `always`
