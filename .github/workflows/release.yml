@@ -29,7 +29,7 @@ jobs:
       - run: yarn test
       # TODO: shareable semantic-release config that lines up with our cz/commitlint ones, ref:
       # https://github.com/semantic-release/semantic-release/blob/master/docs/usage/shareable-configurations.md
-      - run: npx --no-install semantic-release
+      - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
