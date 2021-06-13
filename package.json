@@ -7,8 +7,9 @@
     ],
     "scripts": {
         "commit": "git-cz",
+        "format": "prettier --write *.{js,json}",
         "postinstall": "husky install",
-        "format": "prettier --write *.{js,json}"
+        "test": "echo TODO"
     },
     "homepage": "https://github.com/cyberscan/commitlint-config-conventional-changelog-for-jira#readme",
     "repository": {
