@@ -8,8 +8,7 @@
     "scripts": {
         "commit": "git-cz",
         "postinstall": "husky install",
-        "format": "prettier --write *.{js,json}",
-        "semantic-release": "semantic-release"
+        "format": "prettier --write *.{js,json}"
     },
     "homepage": "https://github.com/cyberscan/commitlint-config-conventional-changelog-for-jira#readme",
     "repository": {
@@ -33,8 +32,7 @@
         "@commitlint/cli": "^12.1.4",
         "commitizen": "^4.2.4",
         "husky": "^6.0.0",
-        "prettier": "^2.3.1",
-        "semantic-release": "^17.4.3"
+        "prettier": "^2.3.1"
     },
     "peerDependencies": {
         "@commitlint/lint": "^12.1.4"
@@ -47,11 +45,6 @@
     "commitlint": {
         "extends": [
             "."
-        ]
-    },
-    "release": {
-        "branches": [
-            "master"
         ]
     },
     "publishConfig": {
