@@ -1,5 +1,4 @@
 const merge = require("lodash/merge");
-
 const base = require("@commitlint/config-angular");
 const types = require("./types");
 
