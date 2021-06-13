@@ -2,12 +2,14 @@
     "name": "@dgc-org/commitlint-config-conventional-changelog-for-jira",
     "version": "0.0.0-semantically-released",
     "description": "Shareable commitlint config enforcing the angular commit convention and Jira smart commits",
+    "main": "src/index.js",
     "files": [
-        "index.js"
+        "src/index.js",
+        "src/types.js"
     ],
     "scripts": {
         "commit": "git-cz",
-        "format": "prettier --write *.{js,json}",
+        "format": "prettier --write **/*.{js,json}",
         "postinstall": "husky install",
         "prepublishOnly": "pinst --disable",
         "postpublish": "pinst --enable",
