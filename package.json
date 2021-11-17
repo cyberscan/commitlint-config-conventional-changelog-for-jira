@@ -54,12 +54,5 @@
     "publishConfig": {
         "access": "public",
         "scope": "@dgc-org"
-    },
-    "prettier": {
-        "printWidth": 80,
-        "endOfLine": "lf",
-        "singleQuote": false,
-        "tabWidth": 4,
-        "semi": true
     }
 }
